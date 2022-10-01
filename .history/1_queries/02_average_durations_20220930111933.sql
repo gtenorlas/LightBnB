@@ -1,0 +1,3 @@
+/*
+Get the average duration of all reservations.
+*/
