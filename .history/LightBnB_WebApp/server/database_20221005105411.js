@@ -76,7 +76,7 @@ const addUser = function (user) {
   `;
   return pool.query(query, [user.name, user.email, user.password])
     .then((result) => {
-      console.log("user saved", result.rows[0]);
+      console.log("user saved", result.rows);
       return result.rows[0];
     })
     .catch((err) => {

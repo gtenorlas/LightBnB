@@ -25,8 +25,8 @@ const getUserWithEmail = function (email) {
   `;
   return pool.query(query, [email]).then((result) => {
     if (result.rows) {
-      console.log("found user with email", result.rows[0]);
-      return result.rows[0];
+      console.log("found user with email", result.rows);
+      return result.rows;
     }
     return null;
 
@@ -50,8 +50,8 @@ const getUserWithId = function (id) {
   `;
   return pool.query(query, [id]).then((result) => {
     if (result.rows) {
-      console.log("found user with id", result.rows[0]);
-      return result.rows[0];
+      console.log("found user with id", result.rows);
+      return result.rows;
     }
     return null;
 
@@ -71,17 +71,10 @@ exports.getUserWithId = getUserWithId;
 const addUser = function (user) {
   const query = `
   INSERT INTO users(name, email, password)
-  VALUES ($1, $2, $3) 
-  RETURNING *;
+  VALUES ($1, $2, $3)
+  RETURN *;
   `;
-  return pool.query(query, [user.name, user.email, user.password])
-    .then((result) => {
-      console.log("user saved", result.rows[0]);
-      return result.rows[0];
-    })
-    .catch((err) => {
-      console.log(err.message);
-    });
+  pool.query(query,[user.name,])
 }
 exports.addUser = addUser;
 
