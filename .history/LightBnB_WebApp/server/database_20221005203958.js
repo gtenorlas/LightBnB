@@ -92,13 +92,13 @@ exports.addUser = addUser;
  * @param {string} guest_id The id of the user.
  * @return {Promise<[{}]>} A promise to the reservations.
  */
-const getAllReservations = function (guest_id, limit = 10) {
-/*   return getAllProperties(null, 2);  */
+const getAllReservations = function (guest_id, limit = 1) {
+  return getAllProperties(null, 2); 
 
-  const query = `
+/*   const query = `
             SELECT
-            properties.*,
             reservations.*,
+            properties.*,
             avg(property_reviews.rating) as average_rating
           FROM
             reservations
@@ -122,7 +122,7 @@ const getAllReservations = function (guest_id, limit = 10) {
     })
     .catch((err) => {
       console.log(err.message);
-    });
+    }); */
 }
 exports.getAllReservations = getAllReservations;
 

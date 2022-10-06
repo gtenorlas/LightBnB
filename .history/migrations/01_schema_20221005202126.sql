@@ -51,7 +51,7 @@ CREATE TABLE property_reviews (
 
 SELECT
   reservations.*,
-  properties.*,
+  properties.*
   avg(property_reviews.rating) as average_rating
 FROM
   reservations

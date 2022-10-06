@@ -93,12 +93,12 @@ exports.addUser = addUser;
  * @return {Promise<[{}]>} A promise to the reservations.
  */
 const getAllReservations = function (guest_id, limit = 10) {
-/*   return getAllProperties(null, 2);  */
+  /* return getAllProperties(null, 2); */
 
   const query = `
             SELECT
-            properties.*,
             reservations.*,
+            properties.*,
             avg(property_reviews.rating) as average_rating
           FROM
             reservations
@@ -116,8 +116,7 @@ const getAllReservations = function (guest_id, limit = 10) {
   `;
 
   return pool.query(query, [guest_id, limit])
-    .then((result) => {
-      console.log("My reservations ", result.rows);
+    .then((result) => {''
       return result.rows;
     })
     .catch((err) => {

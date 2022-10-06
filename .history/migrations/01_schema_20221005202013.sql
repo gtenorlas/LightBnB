@@ -48,11 +48,12 @@ CREATE TABLE property_reviews (
   rating SMALLINT NOT NULL DEFAULT 0,
   message TEXT
 );
-
 SELECT
-  reservations.*,
-  properties.*,
-  avg(property_reviews.rating) as average_rating
+  reservations.id,
+  properties.title,
+  properties.cost_per_night,
+  reservations.start_date,
+  avg(rating) as average_rating
 FROM
   reservations
   JOIN properties ON reservations.property_id = properties.id
