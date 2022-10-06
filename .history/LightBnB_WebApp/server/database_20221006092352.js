@@ -199,6 +199,7 @@ exports.getAllProperties = getAllProperties;
  */
 const addProperty = function (property) {
 
+
   const query = `
   INSERT INTO properties (
     title, 

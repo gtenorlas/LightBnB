@@ -198,6 +198,10 @@ exports.getAllProperties = getAllProperties;
  * @return {Promise<{}>} A promise to the property.
  */
 const addProperty = function (property) {
+  /*   const propertyId = Object.keys(properties).length + 1;
+    property.id = propertyId;
+    properties[propertyId] = property;
+    return Promise.resolve(property); */
 
   const query = `
   INSERT INTO properties (
@@ -237,11 +241,12 @@ const addProperty = function (property) {
 
   return pool.query(query, params)
     .then((result) => {
-      console.log("Property added", result.rows[0]);
+
       return result.rows[0];
     })
-    .catch((err) => {
-      console.log(err.message);
+    .catch((err)=>{
+
+      console.log(err.message)
     });
 }
 exports.addProperty = addProperty;
