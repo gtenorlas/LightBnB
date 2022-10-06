@@ -169,7 +169,7 @@ const getAllProperties = (options, limit = 10) => {
     queryString += ` properties.cost_per_night <= $${queryParams.length} `;
   }
 
-  queryString += '\nGROUP BY properties.id';
+  queryString += 'GROUP BY properties.id';
 
   if (options.minimum_rating) {
     queryParams.push(options.minimum_rating);

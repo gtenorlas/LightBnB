@@ -153,7 +153,7 @@ const getAllProperties = (options, limit = 10) => {
 
   if (options.owner_id) {
     queryParams.push(options.owner_id);
-    queryString += !queryParams.length ? 'WHERE' : 'AND';
+    queryString += queryParams.length ? 'WHERE' : 'AND';
     queryString += ` properties.owner_id = $${queryParams.length} `;
   }
 
@@ -169,7 +169,7 @@ const getAllProperties = (options, limit = 10) => {
     queryString += ` properties.cost_per_night <= $${queryParams.length} `;
   }
 
-  queryString += '\nGROUP BY properties.id';
+  queryString += 'GROUP BY properties.id';
 
   if (options.minimum_rating) {
     queryParams.push(options.minimum_rating);
