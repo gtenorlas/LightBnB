@@ -93,7 +93,7 @@ exports.addUser = addUser;
  * @return {Promise<[{}]>} A promise to the reservations.
  */
 const getAllReservations = function (guest_id, limit = 10) {
-  /*   return getAllProperties(null, 2);  */
+/*   return getAllProperties(null, 2);  */
 
   const query = `
             SELECT

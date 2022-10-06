@@ -150,7 +150,7 @@ const getAllProperties = (options, limit = 10) => {
     queryString += `WHERE city LIKE $${queryParams.length} `;
   }
 
-  // 4
+  // 4git 
   queryParams.push(limit);
   queryString += `
   GROUP BY properties.id
