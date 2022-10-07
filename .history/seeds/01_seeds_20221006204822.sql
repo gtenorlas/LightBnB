@@ -13,7 +13,7 @@ INSERT INTO
 VALUES
   (
     'One Luna',
-    'oluna@gmail.com',
+    'oluna.gmail.com',
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u'
   );
 
@@ -22,7 +22,7 @@ INSERT INTO
 VALUES
   (
     'Clark Kent',
-    'ckent@gmail.com',
+    'ckent.gmail.com',
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u'
   );
 
